@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package proyectoia;
 
 /**
  *
- * @author kazemu
+ * @author Santa Gutierrez
  */
-public class Aux{
-    private int tam = 0;
+public class Aux2 {
+     private int tam = 0;
  
-    public Aux(int tam){
+    public Aux2(int tam){
         this.tam = tam;
     }
  /*

@@ -3,18 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package proyectoia;
 
 /**
  *
- * @author kazemu
+ * @author Santa Gutierrez
  */
-public class BusquedaAmplitud {
-    
+public class BusquedaAsterisco1 {
     private int[][] matrix;
     private Queue queue = new Queue();
     private int iniX;
     private int iniY;
+    private int endX;
+    private int endY;
     private Aux2 aux;
     
     private int START = 0;
@@ -26,10 +28,12 @@ public class BusquedaAmplitud {
     private int[] RECHARGE = {6,5};
     private int GOAL = 7;
     
-    BusquedaAmplitud(int[][] matrix, int iniX, int iniY){
+    BusquedaAsterisco1(int[][] matrix, int iniX, int iniY, int endX, int endY){
         this.matrix=matrix;
         this.iniX=iniX;
         this.iniY=iniY;
+        this.endX=endX;
+        this.endY=endY;
         aux = new Aux2(matrix.length);
         int[][] iniPath = new int[0][2];
         
@@ -80,5 +84,9 @@ public class BusquedaAmplitud {
     int calcCharge(int chargeAct, int number){
         if(number==RECHARGE[0]){return 6;}
         else{return chargeAct-1;}
+    }
+    
+    int calcManhattan(){
+        
     }
 }

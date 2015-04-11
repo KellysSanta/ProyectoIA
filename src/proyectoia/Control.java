@@ -15,6 +15,7 @@ public class Control {
     
     private int matrix[][];
     private int posStart[];
+    private int posEnd[];
     
     Control(String fileIn) throws IOException {
         Reader reader = new Reader(fileIn);
@@ -23,7 +24,10 @@ public class Control {
         findPosStart();
         System.out.println("Posicion de inicio: "+posStart[0]+"-"+posStart[1]);
         
-        Aux aux = new Aux(matrix.length);
+        findPosEnd();
+        System.out.println("Posicion final: "+posEnd[0]+"-"+posEnd[1]);
+        
+        Aux2 aux = new Aux2(matrix.length);
         aux.printMatrix(matrix);
     }
     
@@ -32,6 +36,20 @@ public class Control {
         for(int j=0;j<matrix.length;j++){
             for(int k=0;k<matrix.length;k++){
                 if(matrix[j][k]==0){
+                    posStart[0]=j;
+                    posStart[1]=k;
+                    j=k=matrix.length;
+                }
+            }
+        }
+        return posStart;
+    }
+    
+    int[] findPosEnd(){
+        posStart = new int[2];
+        for(int j=0;j<matrix.length;j++){
+            for(int k=0;k<matrix.length;k++){
+                if(matrix[j][k]==7){
                     posStart[0]=j;
                     posStart[1]=k;
                     j=k=matrix.length;
